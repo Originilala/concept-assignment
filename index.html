@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <title>Title</title>
+    <title>Business Website Opdracht</title>
 </head>
 <body>
 <header class="header__outer-container">
@@ -18,7 +18,7 @@
         <div class="hero-section">
             <h1 class="hero-section__title">Your website is an investment in the success of your business.</h1>
             <p class="hero-section__payoff">We are here to help you succeed. Let's work together</p>
-            <a href="#contact-form">
+            <a class="hero-section__button-wrapper" href="#contact-form">
                 <button class="hero-section__button--active">let's work together</button>
             </a>
         </div>
@@ -117,7 +117,7 @@
                     providing you the best opportunities for organic search exposure.</p>
             </article>
             <article class="tile">
-                <div class="card__picture-six"></div>
+                <div class="tile__picture-six"></div>
                 <h3 class="tile__title">Copy Writing</h3>
                 <p class="tile__proposition">
                     Brand messaging needs to be clear,
@@ -131,24 +131,24 @@
 </main>
 <footer class="footer__outer-container">
     <div class="footer__inner-container">
-        <h3 class="form-title">Let's work together</h3>
-        <label class="contact-us">Have a question? Need a quote? Let us know!
-            <form action="" id="contact-form">
-                <label class="contact-us__name">name
-                    <input name="name" type="text">
-                </label>
-                <label class="contact-us__email">email
-                    <input name="email" placeholder="message" type="email">
-                </label>
-                <label class="contact-us__message">
-                    <textarea name="message" placeholder="message" cols="30" rows="10"></textarea>
-                </label>
-                <button class="contact-us__button--active">let's work together</button>
-            </form>
-        </label>
-    </div>
-    <div class="copyright">
-        <p class="copyright__text">Business website opdracht © NOVI Hogeschool 2022</p>
+            <h3 class="footer__title" id="#contact-form">Let's work together</h3>
+            <label class="input-form__label">Have a question? Need a quote? Let us know!
+                <form class="input-form" action="">
+                    <label class="input-form__label-name">name
+                        <input name="name" placeholder="name" type="text">
+                    </label>
+                    <label class="input-form__label-email">email
+                        <input name="email" placeholder="email" type="email">
+                    </label>
+                    <label class="input-form__label-message">message
+                        <textarea name="message" placeholder="message" cols="30" rows="10"></textarea>
+                    </label>
+                    <button class="input-form__button--active">let's work together</button>
+                </form>
+            </label>
+        <div class="copyright">
+            <p class="copyright__text">Business website opdracht © NOVI Hogeschool 2022</p>
+        </div>
     </div>
 </footer>
 </body>

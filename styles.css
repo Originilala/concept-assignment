@@ -1,5 +1,29 @@
+/* ------ Content table
+
+   ------ 1. Global Styles
+   ------ 2. Typography
+   ------ 3. Layout
+   ------ 4. Areas
+   ------ 4.1 Header
+   ------ 4.2 Main
+   -------4.2.1 Introduction
+   ------ 4.2.2 Articles
+   ------ 4.2.3 Propositions
+   ------ 4.3 Footer
+   ------ 4.3.1 Form
+   ------ 4.3.2 Copyright
+
+                            ------ */
+
+
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 /* ------------------------------- 2. Typography ----------------------------------- */
 
@@ -57,7 +81,17 @@
 
 }
 
+.hero-section__payoff{
+
+}
+.hero-section__button-wrapper{
+
+}
 .hero-section__button--active{
+
+}
+
+.header__squigle{
 
 }
 
@@ -70,6 +104,7 @@
 
 }
 /* --------------- 4.2.1 Introduction ------------- */
+
 .introduction{
 
 }
@@ -82,35 +117,32 @@
 
 }
 
-.introduction__link{
+.introduction__payoff a{
 
 }
 /* --------------- 4.2.2 Articles ----------------- */
+
+#case-studies{
+
+}
+
 .quotations{
 
 }
 
-.article-one{
+.card{
 
 }
 
-.article-one__picture{
+.card__picture-one{
 
 }
 
-.article-two{
+.card__picture-two{
 
 }
 
-.article-two__picture{
-
-}
-
-.article-three{
-
-}
-
-.article-three__picture{
+.card__picture-three{
 
 }
 
@@ -126,33 +158,61 @@
 
 }
 
-.quotes__quote a{
+.quotes__link{
 
 }
 
 
 /* --------------- 4.2.3 Propositions ------------- */
 
+#services{
+
+}
+
 .propositions{
 
 }
 
-.propositions_title{
+.tile__title{
 
 }
-.field{
-
-}
-
-.field h3{
+.tile__title{
 
 }
 
-.field p{
+.tile__proposition{
+
+}
+
+.tile__picture-one{
+
+}
+
+.tile__picture-two{
+
+}
+
+.tile__picture-three{
+
+}
+
+.tile__picture-four{
+
+}
+
+.tile__picture-five{
+
+}
+
+.tile__picture-six{
 
 }
 
 /* --------------- 4.3 Footer --------------------- */
+
+#contact-form{
+
+}
 
 .footer__outer-container{
 
@@ -162,22 +222,66 @@
 
 }
 
-.form-title{
+.footer__title{
 
 }
 
-.contact-us{
+/* --------------- 4.3.1 Form --------------------- */
+
+.input-form__label{
 
 }
 
-.contact-us__name{
+.input-form{
 
 }
 
-.contact-us__email{
+.input-form__label-name{
 
 }
 
-.contact-us__message{
+.input-form__label-name input{
+
+}
+
+.input-form__label-name input::placeholder{
+
+}
+
+.input-form__label-email{
+
+}
+
+.input-form__label-email input{
+
+}
+
+.input-form__label-email input::placeholder{
+
+}
+
+.input-form__label-message{
+
+}
+
+.input-form__label-message input{
+
+}
+
+.input-form__label-message input::placeholder{
+
+}
+
+.input-form__button--active{
+
+}
+
+/* --------------- 4.3.2 Copyright --------------- */
+
+.copyright{
+
+}
+
+.copyright__text{
 
 }
