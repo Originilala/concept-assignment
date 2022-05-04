@@ -43,6 +43,7 @@
 
 body{
     font-family: var(--second-font);
+    font-size: 14px;
 }
 
 h1,
@@ -55,29 +56,35 @@ h5{
 
 .hero-section__title,
 .footer__title{
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .hero-section__payoff,
 .quotes__title{
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
-.navigation__item a,
+.navigation__item a{
+    font-size: 2.25rem;
+}
 .introduction__title,
 .input-form__label-name,
 .input-form__label-email,
 .input-form__label-message,
 .input-form__label-name input::placeholder,
 .input-form__label-email input::placeholder,
-.input-form__label-message textarea::placeholder{
+.input-form__label-message textarea::placeholder,
+.hero-section__button--active,
+.input-form__button--active{
     font-size: 1.5rem;
 }
 
 .quotes__link,
-.tile__proposition,
-.copyright__text,
-.input-form__label{
+.input-form__label,
+.tile__proposition{
+    font-size: 1rem;
+}
+.copyright__text{
     font-size: 0.75rem;
 }
 
@@ -97,6 +104,7 @@ h5{
 }
 
 .header__inner-container{
+    position: relative;
     flex-basis: 1400px;
     margin: 0 20px;
     display: flex;
@@ -108,6 +116,7 @@ h5{
 .navigation{
     width: 100%;
     border: 1px solid orange;
+    padding: 50px 0;
 
 }
 
@@ -115,13 +124,13 @@ h5{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 2em;
+    gap: 3em;
 
 }
 
 .navigation__item{
     list-style-type: none;
-    margin-inline: 2em;
+    margin-inline: 4em;
 }
 
 .navigation__item a{
@@ -131,56 +140,86 @@ h5{
 }
 
 .hero-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+    border: 1px solid turquoise;
     color: white;
+    padding: 200px 0;
+    margin-bottom: 200px;
 }
 
 .hero-section__title{
-
+    width: 100%;
+    text-align: center;
 }
 
 .hero-section__payoff{
-
+    width: 100%;
+    text-align: center;
 }
 .hero-section__button-wrapper{
-    color: inherit;
-    font-size: inherit;
+
 }
 .hero-section__button--active{
     background: var(--third-bg-color);
-    color: inherit;
-    font-size: inherit;
+    color: white;
     text-transform: uppercase;
-    border-radius: 30px;
-    padding: 20px;
-    width: 300px;
-
+    border-radius: 45px;
+    padding: 30px;
+    width: 500px;
 }
 
 .header__squigle{
+    position:absolute;
+    bottom: 0;
     background-image: url("./assets/squiggle_line_stripe.svg");
     background-size: 100%;
+    width: 150px;
+    height: 200px;
+
 }
 
 /* --------------- 4.2 Main ----------------------- */
 .main__outer-container{
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid red;
 }
 
 .main__inner-container{
-
+    flex-basis: 1400px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid green;
 }
 /* --------------- 4.2.1 Introduction ------------- */
 
 .introduction{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+    padding: 100px 0;
+    border: 1px solid turquoise;
 }
 
 .introduction__title{
     color: var(--main-bg-color);
+    width: 100%;
+    text-align: center;
 }
 
 .introduction__payoff{
     color: var(--main-font-color);
+    width: 100%;
+    text-align: center;
 }
 
 .introduction__payoff a{
@@ -196,28 +235,45 @@ h5{
 
 .quotations{
     background: var(--second-font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+    padding: 50px 0;
 }
 
 .card{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+    padding: 50px 0;
 
 }
 
 .card__picture-one{
     background-image: url("./assets/work-image-01.jpeg");
-    background-size: 100%;
-    width: 100%;
+    background-size: cover;
+    width: 800px;
+    height: 530px;
+
 }
 
 .card__picture-two{
     background-image: url("./assets/work-image-02.jpeg");
-    background-size: contain;
-    width: 100%;
+    background-size: cover;
+    width: 800px;
+    height: 530px;
 }
 
 .card__picture-three{
     background-image: url("./assets/work-image-03.jpeg");
     background-size: cover;
-    width: 100%;
+    width: 800px;
+    height: 530px;
 }
 
 .quotes{
@@ -332,11 +388,14 @@ h5{
 }
 
 .input-form__label-name input{
-
+    border: 0.5px solid grey;
+    border-radius: 0.25em;
+    width: 100%;
 }
 
 .input-form__label-name input::placeholder{
     text-transform: capitalize;
+    padding: 20px;
 }
 
 .input-form__label-email{
@@ -344,11 +403,14 @@ h5{
 }
 
 .input-form__label-email input{
-
+    border: 0.5px solid grey;
+    border-radius: 0.25em;
+    width: 100%;
 }
 
 .input-form__label-email input::placeholder{
     text-transform: capitalize;
+    padding: 20px;
 }
 
 .input-form__label-message{
@@ -356,22 +418,23 @@ h5{
 }
 
 .input-form__label-message textarea{
-
+    border-radius: 0.25em;
+    width: 100%;
 }
 
 .input-form__label-message textarea::placeholder{
     text-transform: capitalize;
+    padding: 20px;
 }
 
 .input-form__button--active{
     background: var(--third-bg-color);
-    color: inherit;
-    font-size: inherit;
+    color: white;
     text-transform: uppercase;
     border: none;
-    border-radius: 30px;
-    padding: 20px;
-    width: 300px;
+    border-radius: 45px;
+    padding: 30px;
+    width: 450px;
 }
 
 /* --------------- 4.3.2 Copyright --------------- */
