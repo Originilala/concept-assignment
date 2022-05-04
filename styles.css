@@ -1,18 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap');
 /* ------ Content table
 
-   ------ 1. Global Styles
-   ------ 2. Typography
-   ------ 3. Layout
-   ------ 4. Areas
-   ------ 4.1 Header
-   ------ 4.2 Main
-   -------4.2.1 Introduction
-   ------ 4.2.2 Articles
-   ------ 4.2.3 Propositions
-   ------ 4.3 Footer
-   ------ 4.3.1 Form
-   ------ 4.3.2 Copyright
-   ------ 5. Media Queries
+   ------ 1. Global Styles -------
+   ------ 2. Typography ----------
+   ------ 3. Layout --------------
+   ------ 4. Areas ---------------
+   ------ 4.1 Header -------------
+   ------ 4.2 Main ---------------
+   -------4.2.1 Introduction -----
+   ------ 4.2.2 Articles ---------
+   ------ 4.2.3 Propositions -----
+   ------ 4.3 Footer -------------
+   ------ 4.3.1 Form -------------
+   ------ 4.3.2 Copyright --------
+   ------ 5. Media Queries -------
 
                             ------ */
 
@@ -24,9 +25,61 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    --main-font: 'Merriweather', 'Times', serif;
+    --second-font: 'Roboto', 'Impact', sans-serif;
+    --main-bg-color: #5722CD; /*purple*/
+    --second-bg-color: #4845E4; /*blue*/
+    --third-bg-color: #ED4385; /*pink*/
+    --gradient-bg-color: linear-gradient(135deg,
+                                    rgba(72,69,228,1) 0%,
+                                    rgba(72,69,228,1) 40%,
+                                    rgba(87,34,205,1) 100%); /*blue-purple*/
+    --main-font-color: #0C0C0C; /*black*/
+    --second-font-color: #F3F6F9; /*light grey*/
+    --third-font-color: #7A7A7A; /*grey*/
 }
 
 /* ------------------------------- 2. Typography ----------------------------------- */
+
+body{
+    font-family: var(--second-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5{
+    font-family: var(--main-font);
+}
+
+.hero-section__title,
+.footer__title{
+    font-size: 3rem;
+}
+
+.hero-section__payoff,
+.quotes__title{
+    font-size: 2rem;
+}
+
+.navigation__item a,
+.introduction__title,
+.input-form__label-name,
+.input-form__label-email,
+.input-form__label-message,
+.input-form__label-name input::placeholder,
+.input-form__label-email input::placeholder,
+.input-form__label-message textarea::placeholder{
+    font-size: 1.5rem;
+}
+
+.quotes__link,
+.tile__proposition,
+.copyright__text,
+.input-form__label{
+    font-size: 0.75rem;
+}
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
@@ -40,6 +93,7 @@
     flex-direction: row;
     justify-content: center;
     border: 1px solid red;
+    background: var(--gradient-bg-color);
 }
 
 .header__inner-container{
@@ -72,10 +126,12 @@
 
 .navigation__item a{
     text-transform: capitalize;
+    text-decoration: none;
+    color: white;
 }
 
 .hero-section{
-
+    color: white;
 }
 
 .hero-section__title{
@@ -86,14 +142,23 @@
 
 }
 .hero-section__button-wrapper{
-
+    color: inherit;
+    font-size: inherit;
 }
 .hero-section__button--active{
+    background: var(--third-bg-color);
+    color: inherit;
+    font-size: inherit;
+    text-transform: uppercase;
+    border-radius: 30px;
+    padding: 20px;
+    width: 300px;
 
 }
 
 .header__squigle{
-
+    background-image: url("./assets/squiggle_line_stripe.svg");
+    background-size: 100%;
 }
 
 /* --------------- 4.2 Main ----------------------- */
@@ -111,14 +176,16 @@
 }
 
 .introduction__title{
-
+    color: var(--main-bg-color);
 }
 
 .introduction__payoff{
-
+    color: var(--main-font-color);
 }
 
 .introduction__payoff a{
+    color: var(--main-bg-color);
+    text-decoration: none;
 
 }
 /* --------------- 4.2.2 Articles ----------------- */
@@ -128,7 +195,7 @@
 }
 
 .quotations{
-
+    background: var(--second-font-color);
 }
 
 .card{
@@ -136,15 +203,21 @@
 }
 
 .card__picture-one{
-
+    background-image: url("./assets/work-image-01.jpeg");
+    background-size: 100%;
+    width: 100%;
 }
 
 .card__picture-two{
-
+    background-image: url("./assets/work-image-02.jpeg");
+    background-size: contain;
+    width: 100%;
 }
 
 .card__picture-three{
-
+    background-image: url("./assets/work-image-03.jpeg");
+    background-size: cover;
+    width: 100%;
 }
 
 .quotes{
@@ -155,12 +228,18 @@
 
 }
 
+.quotes__title::after{
+    background-image: url("./assets/squiggle_line.svg");
+    background-size: 100%;
+}
+
 .quotes__quote{
 
 }
 
 .quotes__link{
-
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 
@@ -174,39 +253,45 @@
 
 }
 
-.tile__title{
-
+.tile{
+    border: 1px solid var(--main-bg-color);
 }
 .tile__title{
-
+    color: var(--main-bg-color);
 }
 
 .tile__proposition{
-
+    color: var(--third-font-color);
 }
 
 .tile__picture-one{
-
+    background-image: url("./assets/icon_web-design.svg");
+    background-size: cover;
 }
 
 .tile__picture-two{
-
+    background-image: url("./assets/icon_web-development.svg");
+    background-size: cover;
 }
 
 .tile__picture-three{
-
+    background-image: url("./assets/icon_ux.svg");
+    background-size: cover;
 }
 
 .tile__picture-four{
-
+    background-image: url("./assets/icon_graphic-design.svg");
+    background-size: cover;
 }
 
 .tile__picture-five{
-
+    background-image: url("./assets/icon_seo.svg");
+    background-size: cover;
 }
 
 .tile__picture-six{
-
+    background-image: url("./assets/icon_copywriting.svg");
+    background-size: cover;
 }
 
 /* --------------- 4.3 Footer --------------------- */
@@ -220,7 +305,8 @@
 }
 
 .footer__inner-container{
-
+    background: var(--gradient-bg-color);
+    color: white;
 }
 
 .footer__title{
@@ -237,6 +323,10 @@
 
 }
 
+.input-form label{
+    text-transform: capitalize;
+}
+
 .input-form__label-name{
 
 }
@@ -246,7 +336,7 @@
 }
 
 .input-form__label-name input::placeholder{
-
+    text-transform: capitalize;
 }
 
 .input-form__label-email{
@@ -258,31 +348,38 @@
 }
 
 .input-form__label-email input::placeholder{
-
+    text-transform: capitalize;
 }
 
 .input-form__label-message{
 
 }
 
-.input-form__label-message input{
+.input-form__label-message textarea{
 
 }
 
-.input-form__label-message input::placeholder{
-
+.input-form__label-message textarea::placeholder{
+    text-transform: capitalize;
 }
 
 .input-form__button--active{
-
+    background: var(--third-bg-color);
+    color: inherit;
+    font-size: inherit;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    width: 300px;
 }
 
 /* --------------- 4.3.2 Copyright --------------- */
 
 .copyright{
-
+    background: var(--main-font-color);
 }
 
 .copyright__text{
-
+    color: white;
 }
