@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap');
+
 /* ------ Content table
 
    ------ 1. Global Styles -------
@@ -18,10 +19,9 @@
                             ------ */
 
 
-
 /* ------------------------------- 1. Global Styles -------------------------------- */
 
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -31,9 +31,9 @@
     --second-bg-color: #4845E4; /*blue*/
     --third-bg-color: #ED4385; /*pink*/
     --gradient-bg-color: linear-gradient(135deg,
-                                    rgba(72,69,228,1) 0%,
-                                    rgba(72,69,228,1) 40%,
-                                    rgba(87,34,205,1) 100%); /*blue-purple*/
+    rgba(72, 69, 228, 1) 0%,
+    rgba(72, 69, 228, 1) 40%,
+    rgba(87, 34, 205, 1) 100%); /*blue-purple*/
     --main-font-color: #0C0C0C; /*black*/
     --second-font-color: #F3F6F9; /*light grey*/
     --third-font-color: #7A7A7A; /*grey*/
@@ -41,7 +41,7 @@
 
 /* ------------------------------- 2. Typography ----------------------------------- */
 
-body{
+body {
     font-family: var(--second-font);
     font-size: 12px;
 }
@@ -50,39 +50,40 @@ h1,
 h2,
 h3,
 h4,
-h5{
+h5 {
     font-family: var(--main-font);
 }
 
 .hero-section__title,
 .footer__title,
-.quotes__title{
+.quotes__title {
     font-size: 4rem;
 }
 
 .hero-section__payoff,
 .input-form__label,
-.tile__title{
+.tile__title,
+.introduction__title{
     font-size: 2.5rem;
 }
 
 .hero-section__button--active,
 .input-form__button--active,
 .navigation__item a,
-.introduction__title,
+.introduction__payoff,
 .input-form__label-name,
 .input-form__label-email,
 .input-form__label-message,
 .input-form__label-name input::placeholder,
 .input-form__label-email input::placeholder,
 .input-form__label-message textarea::placeholder,
-.copyright__text{
+.copyright__text {
     font-size: 1.75rem;
 }
 
 .quotes__quote,
 .quotes__link,
-.tile__proposition,{
+.tile__proposition {
     font-size: 1rem;
 }
 
@@ -91,7 +92,7 @@ h5{
 
 .header__outer-container,
 .main__outer-container,
-.footer__outer-container{
+.footer__outer-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -109,7 +110,7 @@ h5{
 .tile,
 .footer__inner-container,
 .input-form,
-.copyright{
+.copyright {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,73 +118,93 @@ h5{
     gap: 3em;
 }
 
+.propositions__slanting,
+.header__slanting {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid white;
+    border-left: 50vw solid white;
+    border-right: 50vw solid transparent;
+    border-top: 30px solid transparent;
+    z-index: 1;
+}
+
+.footer__slanting,
+.quotations__slanting {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-top: 30px solid white;
+    border-right: 50vw solid white;
+    border-left: 50vw solid transparent;
+    border-bottom: 30px solid transparent;
+    z-index: 1;
+}
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------- */
 
-.header__outer-container{
+.header__outer-container {
     position: relative;
-    border: 1px solid red;
     background: var(--gradient-bg-color);
 }
 
-.header__inner-container{
+.header__inner-container {
     flex-basis: 1700px;
     margin: 0 20px;
-    border: 1px solid green;
 }
 
-.navigation{
+.navigation {
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
-    border: 1px solid orange;
     padding: 50px 0;
 }
 
-.navigation__list{
+.navigation__list {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 3em;
-    padding-right: 100px;
-
+    /*gap: 3em;*/
+    padding-right: 50px;
 }
 
-.navigation__item{
+.navigation__item {
     list-style-type: none;
-    margin-inline: 3em;
+    margin-inline: 7em;
 }
 
-.navigation__item a{
+.navigation__item a {
     text-transform: capitalize;
     text-decoration: none;
     color: white;
 }
 
-.hero-section{
-    border: 1px solid turquoise;
+.hero-section {
     width: 100%;
     color: white;
     padding: 200px 0;
     margin-bottom: 200px;
 }
 
-.hero-section__title{
+.hero-section__title {
     width: 100%;
     text-align: center;
 }
 
-.hero-section__payoff{
+.hero-section__payoff {
     width: 100%;
     text-align: center;
 }
-.hero-section__button-wrapper{
 
-}
-.hero-section__button--active{
+.hero-section__button--active {
     background: var(--third-bg-color);
     color: white;
     text-transform: uppercase;
@@ -194,8 +215,8 @@ h5{
     box-shadow: 5px 5px 50px -10px var(--main-font-color);
 }
 
-.header__squigle{
-    position:absolute;
+.header__squigle {
+    position: absolute;
     bottom: 0;
     background-image: url("./assets/squiggle_line_stripe.svg");
     background-size: 100%;
@@ -205,68 +226,56 @@ h5{
 }
 
 /* --------------- 4.2 Main ----------------------- */
-.main__outer-container{
-    border: 1px solid red;
+.main__outer-container {
+    position: relative;
 }
 
-.main__inner-container{
+.main__inner-container {
     flex-basis: 1700px;
     margin: 0 20px;
-    border: 1px solid green;
 }
+
 /* --------------- 4.2.1 Introduction ------------- */
 
-.introduction{
+.introduction {
     padding: 100px 0;
-    border: 1px solid turquoise;
 }
 
-.introduction__title{
+.introduction__title {
     color: var(--main-bg-color);
     width: 100%;
     text-align: center;
 }
 
-.introduction__payoff{
+.introduction__payoff {
     color: var(--main-font-color);
     width: 100%;
     text-align: center;
 }
 
-.introduction__payoff a{
+.introduction__payoff a {
     color: var(--main-bg-color);
     text-decoration: none;
-
 }
+
 /* --------------- 4.2.2 Articles ----------------- */
 
-#case-studies{
-
-}
-
-.quotations{
+.quotations {
     background: var(--second-font-color);
+    position: relative;
     width: 100%;
     padding: 100px 0;
-    border: 1px solid green;
 }
 
-.card{
-    /*flex-basis: 100%;*/
-    /*padding: 50px 20px;*/
-
-}
-
-.card__picture-one{
+.card__picture-one {
     background-image: url("./assets/work-image-01.jpeg");
     background-size: cover;
     width: 800px;
     height: 530px;
     box-shadow: 0px 10px 50px -30px var(--main-font-color);
-
 }
 
-.card__picture-two{
+.card__picture-two {
     background-image: url("./assets/work-image-02.jpeg");
     background-size: cover;
     width: 800px;
@@ -274,7 +283,7 @@ h5{
     box-shadow: 0px 10px 50px -30px var(--main-font-color);
 }
 
-.card__picture-three{
+.card__picture-three {
     background-image: url("./assets/work-image-03.jpeg");
     background-size: cover;
     width: 800px;
@@ -282,16 +291,12 @@ h5{
     box-shadow: 0px 10px 50px -30px var(--main-font-color);
 }
 
-.quotes{
+.quotes {
     align-items: flex-start;
     padding: 100px 0;
 }
 
-.quotes__title{
-
-}
-
-.quotes__squigle{
+.quotes__squigle {
     background-image: url("./assets/squiggle_line.svg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -299,49 +304,60 @@ h5{
     height: 10px;
 }
 
-.quotes__quote{
+.quotes__quote {
     width: 800px;
 }
 
-.quotes__link{
+.quotes__link {
+    position: relative;
     text-decoration: none;
     text-transform: uppercase;
 }
 
+.quotes__link::after {
+    position: absolute;
+    content: '';
+    width: 10%;
+    border-bottom: solid 1px;
+    left: 110%;
+    top: 50%;
+    transition: width 1s ease-in-out;
+    z-index: 1;
+}
+
+.quotes__link:hover::after {
+    width: 20%;
+}
 
 /* --------------- 4.2.3 Propositions ------------- */
 
-#services{
-
-}
-
-.propositions{
+.propositions {
     padding: 100px 0;
 }
 
-.tile{
-    border: 2px solid var(--main-bg-color);
+.tile {
+    border: 3px solid var(--main-bg-color);
     flex-basis: 700px;
     aspect-ratio: 1/1;
     gap: 0em;
     align-items: flex-start;
-    padding: 0px 50px;
+    padding: 0px 100px;
     box-shadow: 5px 5px 50px -20px var(--main-font-color);
-
 }
-.tile__title{
+
+.tile__title {
     color: var(--main-bg-color);
     width: 500px;
     padding-top: 0px;
     padding-bottom: 40px;
 }
 
-.tile__proposition{
+.tile__proposition {
     color: var(--third-font-color);
     width: 500px;
 }
 
-.tile__picture-one{
+.tile__picture-one {
     background-image: url("./assets/icon_web-design.svg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -349,7 +365,7 @@ h5{
     height: 150px;
 }
 
-.tile__picture-two{
+.tile__picture-two {
     background-image: url("./assets/icon_web-development.svg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -357,7 +373,7 @@ h5{
     height: 150px;
 }
 
-.tile__picture-three{
+.tile__picture-three {
     background-image: url("./assets/icon_ux.svg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -365,7 +381,7 @@ h5{
     height: 150px;
 }
 
-.tile__picture-four{
+.tile__picture-four {
     background-image: url("./assets/icon_graphic-design.svg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -373,7 +389,7 @@ h5{
     height: 150px;
 }
 
-.tile__picture-five{
+.tile__picture-five {
     background-image: url("./assets/icon_seo.svg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -381,7 +397,7 @@ h5{
     height: 150px;
 }
 
-.tile__picture-six{
+.tile__picture-six {
     background-image: url("./assets/icon_copywriting.svg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -391,103 +407,81 @@ h5{
 
 /* --------------- 4.3 Footer --------------------- */
 
-#contact-form{
-
-}
-
-.footer__outer-container{
+.footer__outer-container {
+    position: relative;
     width: 100%;
     flex-wrap: wrap;
-    border: 1px solid red;
 }
 
-.footer__inner-container{
+.footer__inner-container {
     background: var(--gradient-bg-color);
     flex-basis: 100%;
     flex-grow: 1;
     color: white;
-    border: 1px solid yellow;
     padding: 80px 0 40px 0;
 }
 
-.footer__title{
+.footer__title {
     text-align: center;
-    border: 1px solid red;
 }
-
 
 /* --------------- 4.3.1 Form --------------------- */
 
-.input-form__label{
-    width: 1700px;
-    border: 5px solid orange;
+.input-form__label {
+    /*width: 100%;*/
     padding: 50px 40px;
 }
 
-.footer__subtitle{
+.footer__subtitle {
     text-align: center;
     padding-bottom: 40px;
 }
 
-.input-form{
+.input-form {
     /*width: 100%;*/
-
     align-items: stretch;
     gap: 1em;
-    border: 3px solid yellow;
 }
 
-.input-form label{
+.input-form label {
     text-transform: capitalize;
 }
 
-.input-form__label-name{
-
-}
-
-.input-form__label-name input{
+.input-form__label-name input {
     border: 0.5px solid grey;
     border-radius: 0.25em;
     width: 100%;
     line-height: 4rem;
 }
 
-.input-form__label-name input::placeholder{
+.input-form__label-name input::placeholder {
     text-transform: capitalize;
     padding: 20px;
 }
 
-.input-form__label-email{
-
-}
-
-.input-form__label-email input{
+.input-form__label-email input {
     border: 0.5px solid grey;
     border-radius: 0.25em;
     width: 100%;
     line-height: 4rem;
 }
 
-.input-form__label-email input::placeholder{
+.input-form__label-email input::placeholder {
     text-transform: capitalize;
     padding: 20px;
 }
 
-.input-form__label-message{
-
-}
-
-.input-form__label-message textarea{
+.input-form__label-message textarea {
     border-radius: 0.25em;
     width: 100%;
 }
 
-.input-form__label-message textarea::placeholder{
+.input-form__label-message textarea::placeholder {
     text-transform: capitalize;
     padding: 20px;
 }
 
-.input-form__button--active{
+.input-form__button--active {
     background: var(--third-bg-color);
     align-self: center;
     color: white;
@@ -501,14 +495,14 @@ h5{
 
 /* --------------- 4.3.2 Copyright --------------- */
 
-.copyright{
+.copyright {
     background: var(--main-font-color);
     flex-basis: 100%;
     flex-grow: 1;
     /*gap: 0px;*/
 }
 
-.copyright__text{
+.copyright__text {
     flex-grow: 1;
     color: white;
     padding: 40px 0;
@@ -517,51 +511,46 @@ h5{
 
 /* ------------------------------- 5. Media Queries --------------------------------- */
 
-@media screen and (min-width: 768px){
-
-    body{
+@media screen and (min-width: 768px) {
+    body {
         font-size: 16px;
     }
 
-    .card{
+    .card {
         width: 100%;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: center;
         gap: 10em;
-        border: 0.5px solid grey;
     }
 
-    .quotes{
+    .quotes {
         flex-basis: 100px;
         padding: 0px 100px;
-        border: 0.5px solid grey;
     }
 
-    .quotes__quote{
+    .quotes__quote {
         width: 100%;
     }
 
-    .card:nth-child(even){
-        flex-direction: row;
+    .card:nth-child(even) {
+        flex-direction: row-reverse;
     }
 
-    .propositions{
+    .propositions {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    .tile{
+    .tile {
         flex-basis: 500px;
         height: 500px;
         aspect-ratio: 1/1;
+        padding: 0px 50px;
     }
 
     .tile__title,
-    .tile__proposition{
+    .tile__proposition {
         width: 100%;
     }
-
-
-
 }
