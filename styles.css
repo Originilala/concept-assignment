@@ -43,7 +43,7 @@
 
 body{
     font-family: var(--second-font);
-    font-size: 14px;
+    font-size: 12px;
 }
 
 h1,
@@ -70,7 +70,6 @@ h5{
 .input-form__button--active,
 .navigation__item a,
 .introduction__title,
-.tile__proposition,
 .input-form__label-name,
 .input-form__label-email,
 .input-form__label-message,
@@ -82,7 +81,8 @@ h5{
 }
 
 .quotes__quote,
-.quotes__link{
+.quotes__link,
+.tile__proposition,{
     font-size: 1rem;
 }
 
@@ -124,20 +124,13 @@ h5{
 
 .header__outer-container{
     position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     border: 1px solid red;
     background: var(--gradient-bg-color);
 }
 
 .header__inner-container{
-    flex-basis: 1400px;
+    flex-basis: 1700px;
     margin: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 3em;
-    align-items: center;
     border: 1px solid green;
 }
 
@@ -172,6 +165,7 @@ h5{
 
 .hero-section{
     border: 1px solid turquoise;
+    width: 100%;
     color: white;
     padding: 200px 0;
     margin-bottom: 200px;
@@ -216,7 +210,7 @@ h5{
 }
 
 .main__inner-container{
-    flex-basis: 1400px;
+    flex-basis: 1700px;
     margin: 0 20px;
     border: 1px solid green;
 }
@@ -258,7 +252,7 @@ h5{
 }
 
 .card{
-    flex-basis: 100%;
+    /*flex-basis: 100%;*/
     /*padding: 50px 20px;*/
 
 }
@@ -322,7 +316,6 @@ h5{
 }
 
 .propositions{
-    align-items: flex-start;
     padding: 100px 0;
 }
 
@@ -332,7 +325,7 @@ h5{
     aspect-ratio: 1/1;
     gap: 0em;
     align-items: flex-start;
-    padding: 0px 100px;
+    padding: 0px 50px;
     box-shadow: 5px 5px 50px -20px var(--main-font-color);
 
 }
@@ -426,7 +419,7 @@ h5{
 /* --------------- 4.3.1 Form --------------------- */
 
 .input-form__label{
-    width: 100%;
+    width: 1700px;
     border: 5px solid orange;
     padding: 50px 40px;
 }
@@ -437,7 +430,8 @@ h5{
 }
 
 .input-form{
-    width: 100%;
+    /*width: 100%;*/
+
     align-items: stretch;
     gap: 1em;
     border: 3px solid yellow;
@@ -519,4 +513,55 @@ h5{
     color: white;
     padding: 40px 0;
     /*text-align: center;*/
+}
+
+/* ------------------------------- 5. Media Queries --------------------------------- */
+
+@media screen and (min-width: 768px){
+
+    body{
+        font-size: 16px;
+    }
+
+    .card{
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 10em;
+        border: 0.5px solid grey;
+    }
+
+    .quotes{
+        flex-basis: 100px;
+        padding: 0px 100px;
+        border: 0.5px solid grey;
+    }
+
+    .quotes__quote{
+        width: 100%;
+    }
+
+    .card:nth-child(even){
+        flex-direction: row;
+    }
+
+    .propositions{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tile{
+        flex-basis: 500px;
+        height: 500px;
+        aspect-ratio: 1/1;
+    }
+
+    .tile__title,
+    .tile__proposition{
+        width: 100%;
+    }
+
+
+
 }
